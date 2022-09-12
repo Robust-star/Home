@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation,Navigate } from "react-router-dom";
 // import Home from './Components/Home/Home'
 import Login from './Components/Login/Login';
 import About from './Components/About/About';
@@ -33,20 +33,23 @@ import BalanceEnquiry from './pages/Manager/balanceEnquiry/BalanceEnquiry';
 import MiniStatement from './pages/Manager/miniStatement/MiniStatement';
 import CustomStat from './pages/Manager/customizedStatement/CustomStat';
 
-
+const PrivateRoute = ({children }) => {
+	return localStorage.getItem("isSubmitted") ? children : <Navigate to="/login" />;
+};
 
 
 const App = (props) => {
+	
 	const location = useLocation();
 	return (
 		<>
 			{
-				location.pathname === '/' || location.pathname === '/login'|| location.pathname === '/services' ||location.pathname === '/about' ||location.pathname === '/contact' ?
+				location.pathname === '/' || location.pathname === '/login' || location.pathname === '/services' || location.pathname === '/about' || location.pathname === '/contact' ?
 					<Navbar /> :
 					<></>
 
 			}
-			
+
 			<Routes>
 				<Route exact path="/" element={<Layout />} >
 					<Route exact path="/services" element={<Services />} />
@@ -54,28 +57,36 @@ const App = (props) => {
 					<Route exact path="/contact" element={<Contact />} />
 					<Route exact path="/login" element={<Login />} />
 				</Route>
-				<Route exact path='/dashboard' element={<Dashboard/>}>
-					
-				</Route> 
-				<Route exact path="/newUser" element={<NewUser />} />
-				<Route path="/newUser" element={<NewUser/>}/>
-          <Route path="/users" element={<UserList/>}/>
-          <Route path="//user/:userId" element={<User/>}/>
-          <Route path="/edituser" element={<EditUser/>}/>
-          <Route path="/deletecustomer" element={<DeleteCustomer/>}/>
-          <Route path="/editaccount" element={<EditAccount/>}/>
-          <Route path="/newaccount" element={<NewAccount/>}/>
-          <Route path="/editaccount" element={<EditAccount/>}/>
-          <Route path="/deleteaccount" element={<DeleteAccount/>}/>
-          <Route path="/deposit" element={<Deposit/>}/>
-		  <Route path="/withdrawl" element={<Withdrawal/>}/>
-		  <Route path="/fundtransfer" element={<FundTransfer/>}/>
-		  <Route path="/changepassword" element={<ChangePassword/>}/>
-		  <Route path="/balanceenquiry" element={<BalanceEnquiry/>}/>
-		  <Route path="/ministatement" element={<MiniStatement/>}/>
-		  <Route path="/customizedstatement" element={<CustomStat/>}/>
-		  {/* <Route path="/login" element={NewProduct}/> */}
-          
+				{/* <Route exact path='/dashboard' element={<Dashboard />} /> */}
+
+				<Route
+					path="/dashboard"
+					element={
+						<PrivateRoute>
+							<Dashboard />
+						</PrivateRoute>
+					}
+				/>
+
+				<Route exact path="/newUser" element={<PrivateRoute><NewUser /></PrivateRoute>} />
+				{/* <Route path="/newUser" element={<NewUser />} /> */}
+				{/* <Route path="/users" element={<UserList/>}/> */}
+				<Route path="//user/:userId" element={<PrivateRoute><User /></PrivateRoute>} />
+				<Route path="/edituser" element={<PrivateRoute><EditUser /></PrivateRoute>} />
+				<Route path="/deletecustomer" element={<PrivateRoute><DeleteCustomer /></PrivateRoute>} />
+				<Route path="/editaccount" element={<PrivateRoute><EditAccount /></PrivateRoute>} />
+				<Route path="/newaccount" element={<PrivateRoute><NewAccount /></PrivateRoute>} />
+				<Route path="/editaccount" element={<PrivateRoute><EditAccount /></PrivateRoute>} />
+				<Route path="/deleteaccount" element={<PrivateRoute><DeleteAccount /></PrivateRoute>} />
+				<Route path="/deposit" element={<PrivateRoute><Deposit /></PrivateRoute>} />
+				<Route path="/withdrawal" element={<PrivateRoute><Withdrawal /></PrivateRoute>} />
+				<Route path="/fundtransfer" element={<PrivateRoute><FundTransfer /></PrivateRoute>} />
+				<Route path="/changepassword" element={<PrivateRoute><ChangePassword /></PrivateRoute>} />
+				<Route path="/balanceenquiry" element={<PrivateRoute><BalanceEnquiry /></PrivateRoute>} />
+				<Route path="/ministatement" element={<PrivateRoute><MiniStatement /></PrivateRoute>} />
+				<Route path="/customizedstatement" element={<PrivateRoute><CustomStat /></PrivateRoute>} />
+				{/* <Route path="/login" element={NewProduct}/> */}
+
 			</Routes>
 
 		</>

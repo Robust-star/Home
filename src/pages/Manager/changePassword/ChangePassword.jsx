@@ -1,7 +1,13 @@
 import "./changePassword.css";
-
+import Topbar from "../../../Components/Dashboard/topbar/Topbar";
+import Sidebar from "../../../Components/Dashboard/sidebar/Sidebar";
 export default function ChangePassword() {
     return (
+        <>
+    <Topbar/>
+    <div className="container1">
+
+    <Sidebar/>
         <div className="changePassword">
             <h1 className="changePasswordTitle">Change Password</h1>
             <form className="changePasswordForm">
@@ -23,5 +29,7 @@ export default function ChangePassword() {
             <button className="changePasswordButton">Reset</button>
             <button className="changePasswordButton">Submit</button>
         </div>
+        </div>
+        </>
     );
 }

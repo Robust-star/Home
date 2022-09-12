@@ -8,8 +8,16 @@ import {
     Publish,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
+import Topbar from "../../../Components/Dashboard/topbar/Topbar";
+import Sidebar from "../../../Components/Dashboard/sidebar/Sidebar";
 export default function EditAccount() {
     return (
+        <>
+    <Topbar/>
+    <div className="container1">
+
+    <Sidebar/>
+
         <div className="editAccount">
             <h1 className="editAccountTitle">Edit Account Details</h1>
             <form className="editAccountForm">
@@ -148,5 +156,7 @@ export default function EditAccount() {
             </div>
 
         </div>
+        </div>
+        </>
     );
 }

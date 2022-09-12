@@ -1,7 +1,14 @@
 import "./editCustomer.css";
 import { Link } from "react-router-dom";
+import Topbar from "../../../Components/Dashboard/topbar/Topbar";
+import Sidebar from "../../../Components/Dashboard/sidebar/Sidebar";
 export default function EditCustomer() {
   return (
+    <>
+    <Topbar/>
+    <div className="container1">
+
+    <Sidebar/>
     <div className="editCustomer">
       <h1 className="editCustomerTitle">Edit Customer</h1>
       <form className="editCustomerForm">
@@ -17,5 +24,7 @@ export default function EditCustomer() {
       </form>
       
     </div>
+    </div>
+    </>
   );
 }

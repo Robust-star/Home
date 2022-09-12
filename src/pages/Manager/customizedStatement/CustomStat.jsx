@@ -1,7 +1,13 @@
 import "./customStat.css";
-
+import Topbar from "../../../Components/Dashboard/topbar/Topbar";
+import Sidebar from "../../../Components/Dashboard/sidebar/Sidebar";
 export default function CustomStat() {
     return (
+        <>
+    <Topbar/>
+    <div className="container1">
+
+    <Sidebar/>
         <div className="customStat">
             <h1 className="customStatTitle">Customized Statement</h1>
             <form className="customStatForm">
@@ -23,5 +29,7 @@ export default function CustomStat() {
             <button className="customStatButton">Reset</button>
             <button className="customStatButton">Submit</button>
         </div>
+        </div>
+        </>
     );
 }

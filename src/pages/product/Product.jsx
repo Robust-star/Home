@@ -6,6 +6,11 @@ import { Publish } from "@material-ui/icons";
 
 export default function Product() {
   return (
+    <>
+    <Topbar/>
+    <div className="container1">
+
+    <Sidebar/>
     <div className="product">
       <div className="productTitleContainer">
         <h1 className="productTitle">Product</h1>
@@ -71,5 +76,7 @@ export default function Product() {
           </form>
       </div>
     </div>
+    </div>
+    </>
   );
 }

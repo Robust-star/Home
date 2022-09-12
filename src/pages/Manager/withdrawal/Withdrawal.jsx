@@ -1,7 +1,13 @@
 import './withdrawal.css'
-
+import Topbar from '../../../Components/Dashboard/topbar/Topbar';
+import Sidebar from '../../../Components/Dashboard/sidebar/Sidebar';
 export default function Withdrawal() {
     return (
+        <>
+    <Topbar/>
+    <div className="container1">
+
+    <Sidebar/>
         <div className="withdrawal">
             <h1 className="withdrawalTitle">Withdraw Amount</h1>
             <form className="withdrawalForm">
@@ -23,5 +29,7 @@ export default function Withdrawal() {
             <button className="withdrawalButton">Reset</button>
             <button className="withdrawalButton">Submit</button>
         </div>
+        </div>
+        </>
     );
 }

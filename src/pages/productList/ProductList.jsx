@@ -59,6 +59,11 @@ export default function ProductList() {
   ];
 
   return (
+    <>
+    <Topbar/>
+    <div className="container1">
+
+    <Sidebar/>
     <div className="productList">
       <DataGrid
         rows={data}
@@ -68,5 +73,7 @@ export default function ProductList() {
         checkboxSelection
       />
     </div>
+    </div>
+    </>
   );
 }

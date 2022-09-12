@@ -1,7 +1,14 @@
 import "./newAccount.css";
+import Topbar from "../../../Components/Dashboard/topbar/Topbar";
+import Sidebar from "../../../Components/Dashboard/sidebar/Sidebar";
 
 export default function NewAccount() {
   return (
+    <>
+    <Topbar/>
+    <div className="container1">
+
+    <Sidebar/>
     <div className="newaccount">
       <h1 className="newaccountTitle">New Account</h1>
       <form className="newaccountForm">
@@ -33,5 +40,7 @@ export default function NewAccount() {
       <button className="newaccountButton">Reset</button>
       <button className="newaccountButton">Submit</button>
     </div>
+    </div>
+    </>
   );
 }

@@ -4,6 +4,8 @@ import { DeleteOutline } from "@material-ui/icons";
 import { userRows } from "../../../dummyData1";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import Topbar from "../../../Components/Dashboard/topbar/Topbar";
+import Sidebar from "../../../Components/Dashboard/sidebar/Sidebar";
 
 export default function MiniStatement() {
     const [data, setData] = useState(userRows);
@@ -72,7 +74,11 @@ export default function MiniStatement() {
     ];
 
     return (
+        <>
+    <Topbar/>
+    <div className="container1">
 
+    <Sidebar/>
         <div className="transactionList">
             <div className="miniStatement">
                 <h1 className="miniStatementTitle">Mini Statement</h1>
@@ -95,6 +101,8 @@ export default function MiniStatement() {
 
             />
         </div>
+        </div>
+        </>
 
     );
 }

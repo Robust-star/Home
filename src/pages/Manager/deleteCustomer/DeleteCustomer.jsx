@@ -1,7 +1,14 @@
 import "./deleteCustomer.css";
 import { Link } from "react-router-dom";
+import Topbar from "../../../Components/Dashboard/topbar/Topbar";
+import Sidebar from "../../../Components/Dashboard/sidebar/Sidebar";
 export default function DeleteCustomer() {
   return (
+    <>
+    <Topbar/>
+    <div className="container1">
+
+    <Sidebar/>
     <div className="deleteCustomer">
       <h1 className="deleteCustomerTitle">Delete Customer</h1>
       <form className="deleteCustomerForm">
@@ -17,5 +24,7 @@ export default function DeleteCustomer() {
       </form>
       
     </div>
+    </div>
+    </>
   );
 }

@@ -7,10 +7,17 @@ import {
   Publish,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
+import Topbar from "../../../Components/Dashboard/topbar/Topbar";
+import Sidebar from "../../../Components/Dashboard/sidebar/Sidebar";
 import "./user.css";
 
 export default function User() {
   return (
+    <>
+    <Topbar/>
+    <div className="container1">
+
+    <Sidebar/>
     <div className="user">
       <div className="userTitleContainer">
         <h1 className="userTitle">Edit Customer</h1>
@@ -144,5 +151,7 @@ export default function User() {
         </div>
       </div>
     </div>
+    </div>
+    </>
   );
 }

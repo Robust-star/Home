@@ -1,7 +1,14 @@
+import Sidebar from '../../../Components/Dashboard/sidebar/Sidebar'
+import Topbar from '../../../Components/Dashboard/topbar/Topbar'
 import './deposit.css'
 
 export default function Deposit() {
     return (
+        <>
+    <Topbar/>
+    <div className="container1">
+
+    <Sidebar/>
         <div className="deposit">
             <h1 className="depositTitle">Deposit Amount</h1>
             <form className="depositForm">
@@ -23,6 +30,8 @@ export default function Deposit() {
             <button className="depositButton">Reset</button>
             <button className="depositButton">Submit</button>
         </div>
+        </div>
+        </>
         
     );
 }
