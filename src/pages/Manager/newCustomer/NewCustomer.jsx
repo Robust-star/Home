@@ -1,7 +1,14 @@
+import Sidebar from "../../../Components/Dashboard/sidebar/Sidebar";
+import Topbar from "../../../Components/Dashboard/topbar/Topbar";
 import "./newCustomer.css";
 
 export default function NewUser() {
   return (
+    <>
+    <Topbar/>
+    <div className="container1">
+
+    <Sidebar/>
     <div className="newUser">
       <h1 className="newUserTitle">New Customer</h1>
       <form className="newUserForm">
@@ -53,8 +60,8 @@ export default function NewUser() {
         {/* <div className="newUserItem">
           <label>Active</label>
           <select className="newUserSelect" name="active" id="active">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
           </select>
         </div> */}
         {/* <div className="sumbitButtons"> */}
@@ -66,5 +73,7 @@ export default function NewUser() {
       <button className="newUserButton">Reset</button>
       <button className="newUserButton">Submit</button>
     </div>
+        </div>
+    </>
   );
 }

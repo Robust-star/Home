@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import { Navigate, useNavigate } from "react-router-dom";
-import Dashboard from "../Dashboard/Dashboard";
+
 import "./login.css";
 
 function Login() {
   // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const navigate=useNavigate();
+
   // User Login info
   const database = [
     {
@@ -42,8 +41,6 @@ function Login() {
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
         setIsSubmitted(true);
-        navigate('/dashboard')
-        localStorage.setItem("isSubmitted",true)
       }
     } else {
       // Username not found
@@ -84,7 +81,6 @@ function Login() {
         <div className="title">Sign In</div>
         {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
       </div>
-      {/* Hello */}
     </div>
   );
 }
